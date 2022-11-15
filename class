@@ -1,0 +1,8 @@
+public class lwcController
+{
+    @auraEnabled(cacheable=true)
+    public static List<Account> fetchAccounts()
+    {
+        return [Select Id,Name,Industry,Rating,Type from Account where Industry != null limit 10];
+    }
+}
